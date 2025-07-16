@@ -53,13 +53,19 @@ export default function MealCard({meal, handleViewChange}){
 
   return(
     <>
-      <Card sx= {{minHeight: 450, display: 'flex', flexDirection: 'column', p: 3, borderRadius: '16px', '&:hover': {boxShadow: '0 4px 20px rgba(153,41,235,0.3)'} }}>
+      <Card sx={{ minHeight: 450, width: '100%', display: 'flex', flexDirection: 'column', p: 3, borderRadius: '16px', '&:hover': { boxShadow: '0 4px 20px rgba(153,41,235,0.3)' }, minWidth: 320}}>
         {meal?.image && (
           <CardMedia
             component="img"
             height="250"
             image={meal.image}
-            sx={{ borderRadius: '16px' }}
+            sx={{
+              borderRadius: '16px',
+              width: '100%',
+              objectFit: 'cover',
+              maxWidth: '350px',
+              alignSelf: 'center'
+            }}
           />
         )}
         <CardContent sx={{ flexGrow: 1, overflow: 'hidden' }}>

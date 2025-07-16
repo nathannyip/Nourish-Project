@@ -139,7 +139,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
 AWS_S3_FILE_OVERWRITE = os.environ.get('AWS_S3_FILE_OVERWRITE', 'False') == 'True'
-AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL')
+AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', '')
 AWS_S3_VERIFY = os.environ.get('AWS_S3_VERIFY', 'True') == 'True'
 
 # Modern Django 4.2+ STORAGES configuration
@@ -151,7 +151,6 @@ STORAGES = {
             "secret_key": AWS_SECRET_ACCESS_KEY,
             "bucket_name": AWS_STORAGE_BUCKET_NAME,
             "region_name": AWS_S3_REGION_NAME,
-            "location": "media",
             "default_acl": AWS_DEFAULT_ACL,
             "file_overwrite": AWS_S3_FILE_OVERWRITE,
         },

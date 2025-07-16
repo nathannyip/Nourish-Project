@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   background-repeat: repeat-y;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 code {

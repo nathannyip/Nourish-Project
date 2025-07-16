@@ -21,9 +21,9 @@ export default function MealGrid({mealType, handleViewChange}) {
 
   return(
     <Box>
-      <Grid container spacing= {10} columns= {12} >
+      <Grid container spacing= {10} sx={{minWidth: '100%'}}  >
         {filteredMeals.map((recommendation, idx) => (
-          <Grid key={idx} item xs={12} sm={6} md={3}>
+          <Grid key={idx} size={{xs:12, sm: 6, md: 4}}>
             <MealCard handleViewChange = {handleViewChange} meal = {recommendation} />
           </Grid>
         ))}

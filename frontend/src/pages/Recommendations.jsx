@@ -102,6 +102,7 @@ export default function Recommendations({onViewChange}){
     try {
       await create_meal(formData); // Pass FormData to your API function
       handleClose();
+      window.location.reload(); // Refresh the page after closing the dialog
     } catch (error) {
       console.error('Failed to create meal', error);
     } finally {
@@ -111,7 +112,7 @@ export default function Recommendations({onViewChange}){
 
 
   return(
-    <Box sx= {{minHeight: '100vh', height: '100%', width: '100vw', position: 'relative'}}>
+    <Box sx= {{minHeight: '100vh', height: '100%', width: '100%', position: 'relative'}}>
       {/* Top right plus button */}
       <Box sx={{ position: 'absolute', top: 16, right: 32, zIndex: 10 }}>
         <IconButton color="primary" onClick={handleOpen} size="large">
@@ -214,7 +215,7 @@ export default function Recommendations({onViewChange}){
           </Box>
         </DialogContent>
       </Dialog>
-      <Box display= 'flex' flexDirection= 'column' alignItems= 'flex-start' m= {5}>
+      <Box display= 'flex' flexDirection= 'column' alignItems= 'flex-start' m= {5} sx={{width: '90%'}}>
         <Typography variant= 'h4' sx={{fontWeight: 600, mb: 1}}>Meal Library</Typography>
         <Typography variant= 'h6' sx={{fontSize: 14, mb: 2}}>Discover and plan your perfect meals</Typography>
         <Stack justifyContent= 'flex-start' direction= 'row' gap= {2}>
